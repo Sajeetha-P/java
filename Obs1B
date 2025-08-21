@@ -1,0 +1,87 @@
+package sajeetha;
+import java.util.Scanner;
+class Student {
+    // Data members
+    String name;
+    String regNo;
+    String dept;
+    int year;
+    int semester;
+    int mark1, mark2, mark3, mark4, mark5, mark6;
+    int total;
+    double average;
+
+    // Method to get details from user
+    public void getDetails() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Name: ");
+        name = sc.nextLine();
+
+        System.out.print("Reg. No.: ");
+        regNo = sc.nextLine();
+
+        System.out.print("Dept: ");
+        dept = sc.nextLine();
+
+        System.out.print("Year: ");
+        year = sc.nextInt();
+
+        System.out.print("Semester: ");
+        semester = sc.nextInt();
+
+        System.out.print("Mark1: ");
+        mark1 = sc.nextInt();
+
+        System.out.print("Mark2: ");
+        mark2 = sc.nextInt();
+
+        System.out.print("Mark3: ");
+        mark3 = sc.nextInt();
+
+        System.out.print("Mark4: ");
+        mark4 = sc.nextInt();
+
+        System.out.print("Mark5: ");
+        mark5 = sc.nextInt();
+
+        System.out.print("Mark6: ");
+        mark6 = sc.nextInt();
+
+        // Calculate total and average
+        total = mark1 + mark2 + mark3 + mark4 + mark5 + mark6;
+        average = total / 6.0;
+
+        // sc.close();  // Don't close Scanner here if you plan to reuse it
+    }
+
+    // Method to display the mark sheet
+    public void display() {
+        System.out.println("\n--- Mark Sheet ---");
+        System.out.println("Name: " + name);
+        System.out.println("Reg. No.: " + regNo);
+        System.out.println("Dept: " + dept);
+        System.out.println("Year: " + year);
+        System.out.println("Semester: " + semester);
+        System.out.println("Mark1: " + mark1);
+        System.out.println("Mark2: " + mark2);
+        System.out.println("Mark3: " + mark3);
+        System.out.println("Mark4: " + mark4);
+        System.out.println("Mark5: " + mark5);
+        System.out.println("Mark6: " + mark6);
+        System.out.println("Total Mark: " + total);
+        System.out.println("Average Mark: " + average);
+        System.out.println("Percentage of Mark: " + average);  // Assuming average = percentage here
+    }
+}
+
+public class obs1B {
+	 public static void main(String[] args) {
+	        Student student = new Student();
+
+	        student.getDetails();   // Get input from user
+	        student.display();      // Display mark sheet
+	    }
+	
+
+}
