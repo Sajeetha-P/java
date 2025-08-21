@@ -1,0 +1,25 @@
+package sajeetha;
+import java.util.Scanner;
+
+public class Obs1A {
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input mark (float/double)
+        System.out.print("Mark: ");
+        double mark = scanner.nextDouble();
+        scanner.nextLine(); // Consume newline left-over
+
+        // Input grade (string)
+        System.out.print("Grade: ");
+        String grade = scanner.nextLine();
+
+        // Output the mark and grade
+        System.out.println("Mark: " + mark);
+        System.out.println("Grade: " + grade);
+
+        scanner.close();
+    }
+}
+
+	
