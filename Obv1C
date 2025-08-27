@@ -1,0 +1,44 @@
+package Sajee;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Obv1c {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		        Scanner sc = new Scanner(System.in);
+		        int n = 5;   // Number of fruit counts
+
+		        int[] fruits = new int[n];
+
+		        try {
+		            // Taking input
+		            for (int i = 0; i < n; i++) {
+		                fruits[i] = sc.nextInt();
+		            }
+
+		            // Sorting using control statements (Bubble Sort)
+		            for (int i = 0; i < n - 1; i++) {
+		                for (int j = 0; j < n - i - 1; j++) {
+		                    if (fruits[j] > fruits[j + 1]) {
+		                        int temp = fruits[j];
+		                        fruits[j] = fruits[j + 1];
+		                        fruits[j + 1] = temp;
+		                    }
+		                }
+		            }
+
+		            // Printing output
+		            for (int num : fruits) {
+		                System.out.print(num + " ");
+		            }
+
+		        } catch (InputMismatchException e) {
+		            System.out.println("InputMismatchException");
+		        }
+		   
+
+	}
+
+}
