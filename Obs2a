@@ -1,0 +1,31 @@
+class Vehicle {
+    void display() {
+        System.out.println("Vehicle Make");
+    }
+}
+
+// Subclass for Alto
+class Alto extends Vehicle {
+    void display() {
+        System.out.println("The name of the Make for Alto : MARUTHI");
+    }
+}
+
+// Subclass for Santro
+class Santro extends Vehicle {
+    void display() {
+        System.out.println("The name of the Make for Santro : HYUNDAI");
+    }
+}
+public class Obv2a {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Alto alto = new Alto();
+        Santro santro = new Santro();
+        
+        alto.display();
+        santro.display();
+    	}
+
+}
