@@ -1,0 +1,23 @@
+package Sajee;
+import java.util.Scanner;
+public class Obv2b {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+
+        // Get string from user
+        System.out.print("Enter a string: ");
+        String input = sc.nextLine();
+
+        // Reverse using StringBuffer
+        StringBuffer sb = new StringBuffer(input);
+        String reversed = sb.reverse().toString();
+
+        // Print reversed string
+        System.out.println("Reversed String: " + reversed);
+
+        sc.close();
+	}
+
+}
