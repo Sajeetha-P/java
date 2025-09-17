@@ -1,0 +1,111 @@
+package Sajee;
+import java.util.*;
+
+//Abstract base class
+abstract class ERPModule {
+ public abstract void initialize();
+ public abstract void execute();
+
+ public String getStatus() {
+     return this.getClass().getSimpleName() + " is running successfully.";
+ }
+}
+
+//Reporting interface
+interface Reporting {
+ void generateReport();
+}
+
+//Auditing interface
+interface Auditing {
+ void performAudit();
+}
+
+//InventoryModule extends ERPModule + implements Reporting
+class InventoryModule extends ERPModule implements Reporting {
+ @Override
+ public void initialize() {
+     System.out.println("Initializing Inventory Module...");
+ }
+
+ @Override
+ public void execute() {
+     System.out.println("Executing Inventory Module operations...");
+ }
+
+ @Override
+ public void generateReport() {
+     System.out.println("Generating Inventory Report...");
+ }
+}
+
+//FinanceModule extends ERPModule + implements Reporting and Auditing
+class FinanceModule extends ERPModule implements Reporting, Auditing {
+ @Override
+ public void initialize() {
+     System.out.println("Initializing Finance Module...");
+ }
+
+ @Override
+ public void execute() {
+     System.out.println("Executing Finance Module operations...");
+ }
+
+ @Override
+ public void generateReport() {
+     System.out.println("Generating Finance Report...");
+ }
+
+ @Override
+ public void performAudit() {
+     System.out.println("Performing Finance Audit...");
+ }
+}
+
+//HRModule extends ERPModule + implements Auditing
+class HRModule extends ERPModule implements Auditing {
+ @Override
+ public void initialize() {
+     System.out.println("Initializing HR Module...");
+ }
+
+ @Override
+ public void execute() {
+     System.out.println("Executing HR Module operations...");
+ }
+
+ @Override
+ public void performAudit() {
+     System.out.println("Performing HR Audit...");
+ }
+}
+public class Obs3c {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<ERPModule> modules = new ArrayList<>();
+        modules.add(new InventoryModule());
+        modules.add(new FinanceModule());
+        modules.add(new HRModule());
+
+        // Run all modules polymorphically
+        for (ERPModule module : modules) {
+            module.initialize();
+            module.execute();
+            System.out.println(module.getStatus());
+
+            // Check if module supports reporting
+            if (module instanceof Reporting) {
+                ((Reporting) module).generateReport();
+            }
+
+            // Check if module supports auditing
+            if (module instanceof Auditing) {
+                ((Auditing) module).performAudit();
+            }
+
+            System.out.println("-----------------------------");
+        }
+	}
+
+}
