@@ -1,0 +1,53 @@
+package Sajee;
+import java.util.*;
+
+//Base class
+class Food {
+ void prepare() {
+     System.out.println("Preparing food...");
+ }
+}
+
+//Subclass Pizza
+class Pizza extends Food {
+ @Override
+ void prepare() {
+     System.out.println("Preparing Pizza: adding dough, sauce, cheese, and toppings.");
+ }
+}
+
+//Subclass Burger
+class Burger extends Food {
+ @Override
+ void prepare() {
+     System.out.println("Preparing Burger: grilling patty, adding bun, veggies, and sauces.");
+ }
+}
+
+//Subclass Salad
+class Salad extends Food {
+ @Override
+ void prepare() {
+     System.out.println("Preparing Salad: chopping vegetables, adding dressing.");
+ }
+}
+
+
+public class Obs3b {
+	public static void prepareAll(List<Food> foodList) {
+	     for (Food f : foodList) {
+	         f.prepare();  // Polymorphic call
+	     }
+	 }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<Food> menu = new ArrayList<>();
+        menu.add(new Pizza());
+        menu.add(new Burger());
+        menu.add(new Salad());
+
+        // Call method
+        prepareAll(menu);
+	}
+
+}
