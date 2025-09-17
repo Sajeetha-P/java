@@ -1,0 +1,46 @@
+package Sajee;
+interface Operations {
+    void multiplication(int a, float b);
+}
+
+// Parent class for converting command-line arguments
+class Arith {
+    int intVal;
+    float floatVal;
+
+    void getValue(String[] args) {
+        // Convert command line arguments into int and float
+        intVal = Integer.parseInt(args[0]);
+        floatVal = Float.parseFloat(args[1]);
+    }
+}
+
+// Child class extending Arith and implementing Operations
+class ArithOperations extends Arith implements Operations {
+    @Override
+    public void multiplication(int a, float b) {
+        float result = a * b;
+        System.out.println("Multiplication Result: " + result);
+    }
+}
+
+public class Obs3a {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		if (args.length < 2) {
+            System.out.println("Please provide two arguments: <int> <float>");
+            return;
+        }
+
+        // Create object
+        ArithOperations obj = new ArithOperations();
+
+        // Get values from command line
+        obj.getValue(args);
+
+        // Perform multiplication
+        obj.multiplication(obj.intVal, obj.floatVal);
+	}
+
+}
