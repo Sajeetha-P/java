@@ -1,0 +1,21 @@
+package Sajee;
+
+public class Obs4b {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] numbers = {10, 20, 30, 40, 50};
+
+        try {
+            // Trying to access 7th element (index 6) → will cause exception
+            System.out.println("Accessing 7th element: " + numbers[6]);
+        } 
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Exception Caught: " + e);
+            System.out.println("You are trying to access an element outside the array size!");
+        }
+
+        System.out.println("Program continues safely after handling exception...");
+	}
+
+}
