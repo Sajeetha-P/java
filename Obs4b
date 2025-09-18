@@ -1,0 +1,30 @@
+package Sajee;
+import java.util.Arrays;
+public class Obs4b {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] marks = {78, 85, 90, 66, 72, 88, 95, 100, 59, 83, 77, 92, 68, 81, 74};
+
+        // Fix the array size lesser than actual inputs (deliberate mistake)
+        int[] studentMarks = new int[10];  // smaller than 15
+
+        try {
+            // Copy marks into smaller array (this will throw exception)
+            for (int i = 0; i < marks.length; i++) {
+                studentMarks[i] = marks[i];
+            }
+
+            // Sort the array
+            Arrays.sort(studentMarks);
+
+            // Highest score = last element after sorting
+            System.out.println("Highest Score: " + studentMarks[studentMarks.length - 1]);
+        } 
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Exception Caught: " + e);
+            System.out.println("Array size is smaller than number of students. Please fix array size!");
+        }
+	}
+
+}
