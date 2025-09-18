@@ -1,0 +1,86 @@
+package Sajee;
+import java.util.Scanner;
+//User-defined exception: Daily Limit
+class DailyLimitExceededException extends Exception {
+ public DailyLimitExceededException(String message) {
+     super(message);
+ }
+}
+
+//User-defined exception: Insufficient Balance
+class InsufficientBalanceException extends Exception {
+ public InsufficientBalanceException(String message) {
+     super(message);
+ }
+}
+
+//Account class
+class BankAccount {
+ private double balance;
+ private double dailyLimit = 50000;
+ private double dailyWithdrawn = 0;
+
+ // Constructor
+ public BankAccount(double initialBalance) {
+     this.balance = initialBalance;
+ }
+
+ // Withdrawal method
+ public void withdraw(double amount) throws DailyLimitExceededException, InsufficientBalanceException {
+     // Check daily limit
+     if (dailyWithdrawn + amount > dailyLimit) {
+         throw new DailyLimitExceededException("Error: Daily withdrawal limit of ₹50,000 exceeded!");
+     }
+
+     // Check balance
+     if (amount > balance) {
+         throw new InsufficientBalanceException("Error: Insufficient balance! Transaction failed.");
+     }
+
+     // Deduct balance
+     balance -= amount;
+     dailyWithdrawn += amount;
+     System.out.println("Withdrawal successful! Amount withdrawn: ₹" + amount);
+     System.out.println("Remaining Balance: ₹" + balance);
+ }
+
+ // Get current balance
+ public double getBalance() {
+     return balance;
+ }
+}
+public class Obs4c {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+
+        // Create account with initial balance
+        System.out.print("Enter initial balance: ₹");
+        double initialBalance = sc.nextDouble();
+        BankAccount account = new BankAccount(initialBalance);
+
+        // Multiple transactions
+        char choice;
+        do {
+            System.out.print("\nEnter amount to withdraw: ₹");
+            double amount = sc.nextDouble();
+
+            try {
+                account.withdraw(amount);
+            } catch (DailyLimitExceededException | InsufficientBalanceException e) {
+                System.out.println(e.getMessage());
+            }
+
+            System.out.print("Do you want to make another transaction? (y/n): ");
+            choice = sc.next().charAt(0);
+
+        } while (choice == 'y' || choice == 'Y');
+
+        // Final balance
+        System.out.println("\nEnd of Day - Final Balance: ₹" + account.getBalance());
+
+        sc.close();
+	}
+
+}
