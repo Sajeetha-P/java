@@ -1,0 +1,21 @@
+package Sajee;
+
+public class Obs4a {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		   try {
+	            // Explicitly create NumberFormatException object
+	            NumberFormatException ex = new NumberFormatException("Manually thrown NumberFormatException");
+
+	            // Throw it using throw keyword
+	            throw ex;
+	        } 
+	        catch (NumberFormatException e) {
+	            System.out.println("Caught Exception: " + e);
+	        }
+
+	        System.out.println("Program continues after handling exception...");
+	}
+
+}
