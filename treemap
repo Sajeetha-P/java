@@ -1,0 +1,19 @@
+package sajee;
+import java.util.*;
+
+
+public class pro3 {
+
+	public static void main(String... args) {
+		// TIntegero-generated method stub
+TreeMap<Integer,String>h=new TreeMap<>();
+h.put(1, "Rani");
+h.put(2, "kani");
+h.put(7, "Ram");
+h.put(4, "Null");
+h.put(8, "Moni");
+h.put(6, "Null");
+System.out.println(h);
+	}
+
+}
