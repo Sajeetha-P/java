@@ -1,0 +1,19 @@
+package sajee;
+import java.util.*;
+
+
+public class pro3 {
+
+	public static void main(String... args) {
+		// TIntegero-generated method stub
+LinkedHashMap<Integer,String>h=new LinkedHashMap<>();
+h.put(1, "Rani");
+h.put(2, "kani");
+h.put(3, "Ram");
+h.put(4, "Null");
+h.put(null, "Moni");
+h.put(6, "Null");
+System.out.println(h);
+	}
+
+}
