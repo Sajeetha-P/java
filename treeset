@@ -1,0 +1,21 @@
+package sajee;
+import java.util.*;
+public class pro2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+TreeSet<Integer>h=new TreeSet<>();
+h.add(10);
+h.add(2);
+h.add(13);
+h.add(44);
+h.add(56);
+System.out.println(h);
+h.remove(13);
+System.out.println(h);
+System.out.println(h.contains(4));
+System.out.println(h.clone());
+
+	}
+
+}
