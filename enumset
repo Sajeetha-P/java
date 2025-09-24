@@ -1,0 +1,17 @@
+package sajee;
+import java.util.*;
+class basket{
+enum Fruits
+{
+	Apple,Mango,Banana,Orange;
+}
+}
+public class pro1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+EnumSet<basket.Fruits>e=EnumSet.of(basket.Fruits.Apple,basket.Fruits.Orange);
+System.out.println(e);
+	}
+
+}
