@@ -1,0 +1,17 @@
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner (System.in);
+        System.out.print("Enter the input : ");
+        String str = scanner.nextLine();
+        StringBuffer sb = new StringBuffer(str);
+        sb.insert(0,"Upon ");
+        System.out.println("After Inserting : "+sb);
+        sb.replace(12,16,"dream");
+        System.out.println("After Relacing :"+sb );
+        sb.append(" came true");
+        System.out.println("After Appending : "+sb);
+        sb.deleteCharAt(17);
+        System.out.println("After deleting :"+sb);
+    }
+}
