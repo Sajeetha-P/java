@@ -1,0 +1,18 @@
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner (System.in);
+        System.out.print("Enter the input : ");
+        String str = scanner.nextLine();
+        StringBuffer sb = new StringBuffer(str);
+        sb.charAt(2);
+        System.out.println("After prinitng 3rd char :"+sb);
+        sb.setCharAt(2,'z');
+        System.out.println("After changing :"+sb);
+        sb.append("123");
+        System.out.println("After Appending : "+sb);
+        sb.reverse();
+        System.out.println("After Reversing :" +sb);
+        
+    }
+}
