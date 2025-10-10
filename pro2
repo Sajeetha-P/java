@@ -1,0 +1,19 @@
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner (System.in);
+        System.out.print("Enter the input : ");
+        String str = scanner.nextLine();
+        StringBuffer sb = new StringBuffer(str);
+        sb.setCharAt(0,'H');
+        System.out.println("After changing to Capital :"+sb);
+        sb.deleteCharAt(5);
+        System.out.println("After deleting :"+sb);
+        sb.append("!!!");
+        System.out.println("After Appending : "+sb);
+        sb.reverse();
+        System.out.println("After Reversing :" +sb);
+    }
+}
+
+
