@@ -1,0 +1,17 @@
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner (System.in);
+        System.out.print("Enter your name : ");
+        String fullname = scanner.nextLine();
+        StringBuffer sb = new StringBuffer(fullname);
+        sb.append(" Greeting");
+        System.out.println("After Appending : "+sb);
+        sb.insert(8,"Ponnusamy");
+        System.out.println("After Inserting : "+sb);
+        sb.replace(18,26,"HELLO");
+        System.out.println("After Relacing :"+sb );
+        sb.reverse();
+        System.out.println("After Reversing :" +sb);
+    }
+}
