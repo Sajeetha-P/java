@@ -1,0 +1,29 @@
+package Sajee;
+import java.io.DataInputStream;
+import java.io.IOException;
+
+public class obs5b {
+
+	public static void main(String[] args) throws IOException {
+        DataInputStream dis = new DataInputStream(System.in);
+
+        // Read string from user
+        System.out.print("Enter a string: ");
+        String input = dis.readLine();  // Reads input as string
+
+        // Convert to StringBuffer
+        StringBuffer sb = new StringBuffer(input);
+
+        // a. Extract the substring "DEPEND" from the original string
+        // Original string: "JAVA IS PLATFORM INDEPENDENT"
+        // DEPEND starts at index 21 and ends at 27 (exclusive)
+        String substring = sb.substring(21, 27);
+        System.out.println("\na) Extracted Substring: " + substring);
+
+        // b. Set the length of the string as 14 and display it
+        sb.setLength(14);
+        System.out.println("b) String after setting length to 14: " + sb);
+		
+	}
+
+}
