@@ -1,0 +1,86 @@
+package Sajee;
+import java.util.*;
+public class obs5c {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+        // 1️⃣ Get paragraph input
+        System.out.println("Enter a paragraph:");
+        String paragraph = sc.nextLine();
+
+        // Split words (ignore multiple spaces, case-insensitive)
+        String[] words = paragraph.trim().split("\\s+");
+
+        // 2️⃣ Count total words and characters (excluding spaces)
+        int wordCount = words.length;
+        int charCount = paragraph.replace(" ", "").length();
+
+        System.out.println("\n--- Text Analysis ---");
+        System.out.println("Total words: " + wordCount);
+        System.out.println("Total characters (excluding spaces): " + charCount);
+
+        // 3️⃣ Find frequency of each unique word (case insensitive)
+        Map<String, Integer> freqMap = new LinkedHashMap<>();
+        for (String w : words) {
+            String word = w.toLowerCase().replaceAll("[^a-zA-Z]", ""); // clean punctuation
+            if (!word.isEmpty()) {
+                freqMap.put(word, freqMap.getOrDefault(word, 0) + 1);
+            }
+        }
+
+        System.out.println("\nWord Frequency (case-insensitive):");
+        for (Map.Entry<String, Integer> entry : freqMap.entrySet()) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
+
+        // 4️⃣ Identify and print the longest word(s)
+        int maxLen = 0;
+        for (String w : freqMap.keySet()) {
+            if (w.length() > maxLen) {
+                maxLen = w.length();
+            }
+        }
+
+        System.out.print("\nLongest word(s): ");
+        for (String w : freqMap.keySet()) {
+            if (w.length() == maxLen) {
+                System.out.print(w + " ");
+            }
+        }
+        System.out.println();
+
+        // 5️⃣ Replace all occurrences of a target word with another word
+        System.out.print("\nEnter the word to replace: ");
+        String target = sc.next();
+        System.out.print("Enter the new word: ");
+        String replacement = sc.next();
+
+        String replacedParagraph = paragraph.replaceAll("(?i)\\b" + target + "\\b", replacement);
+        System.out.println("\nParagraph after replacement:\n" + replacedParagraph);
+
+        // 6️⃣ Capitalize first letter of each sentence
+        String formatted = capitalizeSentences(replacedParagraph);
+        System.out.println("\nFormatted Paragraph:\n" + formatted);
+
+        sc.close();
+    }
+
+    // Helper method to capitalize the first letter of each sentence
+    private static String capitalizeSentences(String text) {
+        String[] sentences = text.split("(?<=[.!?])\\s*");
+        StringBuilder sb = new StringBuilder();
+
+        for (String s : sentences) {
+            s = s.trim();
+            if (s.length() > 0) {
+                sb.append(Character.toUpperCase(s.charAt(0)))
+                  .append(s.substring(1))
+                  .append(" ");
+            }
+        }
+        return sb.toString().trim();
+
+	}
+
+}
