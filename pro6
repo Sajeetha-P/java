@@ -1,0 +1,35 @@
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        
+       /* StringBuilder msg = new StringBuilder("missioncomplete");
+        msg.insert(7,"_");
+        System.out.println("After Inserting :"+msg);
+        msg.replace(7,15,"done");
+         System.out.println("After Replacing :"+msg);
+        msg.append("20,25");
+         System.out.println("After Appending:"+msg);
+         msg.reverse();
+          System.out.println("After Reversing :"+msg);*/
+          
+       /*   StringBuilder msg = new StringBuilder("HeloWorl");
+       msg.insert(2,"l");
+        System.out.println("After Inserting :"+msg);
+        msg.delete(4,5);
+        System.out.println("After Deleting :"+msg);
+       msg.replace(0,4,"Hello");
+         System.out.println("After Replacing :"+msg);
+         msg.append("d");
+         System.out.println("After Appending:"+msg);*/
+         
+       /*  StringBuilder msg = new StringBuilder("Pa$$word123");
+         msg.delete(2,4);
+        System.out.println("After Deleting :"+msg);
+        msg.insert(2,"_");
+        System.out.println("After Inserting :"+msg);
+        msg.replace(7,10,"###");
+         System.out.println("After Replacing :"+msg);
+         msg.append("!");
+         System.out.println("After Appending:"+msg);*/
+    }
+}
